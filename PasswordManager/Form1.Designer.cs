@@ -29,7 +29,6 @@ namespace PasswordManager
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.usernameLabel = new System.Windows.Forms.Label();
             this.passwordLabel = new System.Windows.Forms.Label();
@@ -40,33 +39,26 @@ namespace PasswordManager
             this.upperCheck = new System.Windows.Forms.CheckBox();
             this.specialCheck = new System.Windows.Forms.CheckBox();
             this.saveButton = new System.Windows.Forms.Button();
-            this.savedAccounts = new System.Windows.Forms.GroupBox();
             this.lengthBar = new System.Windows.Forms.TrackBar();
             this.lengthLabel = new System.Windows.Forms.Label();
+            this.accountBox = new System.Windows.Forms.TextBox();
+            this.accountNameLabel = new System.Windows.Forms.Label();
+            this.statusLabel = new System.Windows.Forms.Label();
+            this.savedAccounts = new System.Windows.Forms.ListBox();
             ((System.ComponentModel.ISupportInitialize)(this.lengthBar)).BeginInit();
             this.SuspendLayout();
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(103, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Password Generator";
-            // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(103, 48);
+            this.textBox1.Location = new System.Drawing.Point(106, 64);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(236, 20);
             this.textBox1.TabIndex = 1;
-            this.textBox1.Text = "Type Username Here...";
             // 
             // usernameLabel
             // 
             this.usernameLabel.AutoSize = true;
-            this.usernameLabel.Location = new System.Drawing.Point(12, 51);
+            this.usernameLabel.Location = new System.Drawing.Point(15, 67);
             this.usernameLabel.Name = "usernameLabel";
             this.usernameLabel.Size = new System.Drawing.Size(85, 13);
             this.usernameLabel.TabIndex = 2;
@@ -75,7 +67,7 @@ namespace PasswordManager
             // passwordLabel
             // 
             this.passwordLabel.AutoSize = true;
-            this.passwordLabel.Location = new System.Drawing.Point(16, 104);
+            this.passwordLabel.Location = new System.Drawing.Point(16, 100);
             this.passwordLabel.Name = "passwordLabel";
             this.passwordLabel.Size = new System.Drawing.Size(53, 13);
             this.passwordLabel.TabIndex = 3;
@@ -83,14 +75,14 @@ namespace PasswordManager
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(75, 101);
+            this.textBox2.Location = new System.Drawing.Point(75, 97);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(185, 20);
             this.textBox2.TabIndex = 4;
             // 
             // checkButton
             // 
-            this.checkButton.Location = new System.Drawing.Point(266, 95);
+            this.checkButton.Location = new System.Drawing.Point(266, 90);
             this.checkButton.Name = "checkButton";
             this.checkButton.Size = new System.Drawing.Size(79, 34);
             this.checkButton.TabIndex = 5;
@@ -99,7 +91,7 @@ namespace PasswordManager
             // 
             // generateButton
             // 
-            this.generateButton.Location = new System.Drawing.Point(351, 96);
+            this.generateButton.Location = new System.Drawing.Point(351, 91);
             this.generateButton.Name = "generateButton";
             this.generateButton.Size = new System.Drawing.Size(75, 33);
             this.generateButton.TabIndex = 6;
@@ -110,7 +102,7 @@ namespace PasswordManager
             // lowerCheck
             // 
             this.lowerCheck.AutoSize = true;
-            this.lowerCheck.Location = new System.Drawing.Point(432, 105);
+            this.lowerCheck.Location = new System.Drawing.Point(432, 100);
             this.lowerCheck.Name = "lowerCheck";
             this.lowerCheck.Size = new System.Drawing.Size(109, 17);
             this.lowerCheck.TabIndex = 7;
@@ -120,7 +112,7 @@ namespace PasswordManager
             // upperCheck
             // 
             this.upperCheck.AutoSize = true;
-            this.upperCheck.Location = new System.Drawing.Point(547, 105);
+            this.upperCheck.Location = new System.Drawing.Point(547, 100);
             this.upperCheck.Name = "upperCheck";
             this.upperCheck.Size = new System.Drawing.Size(109, 17);
             this.upperCheck.TabIndex = 8;
@@ -130,11 +122,11 @@ namespace PasswordManager
             // specialCheck
             // 
             this.specialCheck.AutoSize = true;
-            this.specialCheck.Location = new System.Drawing.Point(662, 105);
+            this.specialCheck.Location = new System.Drawing.Point(662, 100);
             this.specialCheck.Name = "specialCheck";
-            this.specialCheck.Size = new System.Drawing.Size(61, 17);
+            this.specialCheck.Size = new System.Drawing.Size(115, 17);
             this.specialCheck.TabIndex = 9;
-            this.specialCheck.Text = "Special";
+            this.specialCheck.Text = "Special Characters";
             this.specialCheck.UseVisualStyleBackColor = true;
             // 
             // saveButton
@@ -145,15 +137,7 @@ namespace PasswordManager
             this.saveButton.TabIndex = 10;
             this.saveButton.Text = "Save Account";
             this.saveButton.UseVisualStyleBackColor = true;
-            // 
-            // savedAccounts
-            // 
-            this.savedAccounts.Location = new System.Drawing.Point(18, 227);
-            this.savedAccounts.Name = "savedAccounts";
-            this.savedAccounts.Size = new System.Drawing.Size(709, 235);
-            this.savedAccounts.TabIndex = 11;
-            this.savedAccounts.TabStop = false;
-            this.savedAccounts.Text = "Saved Accounts";
+            this.saveButton.Click += new System.EventHandler(this.saveButton_Click);
             // 
             // lengthBar
             // 
@@ -161,7 +145,7 @@ namespace PasswordManager
             this.lengthBar.Maximum = 100;
             this.lengthBar.Minimum = 1;
             this.lengthBar.Name = "lengthBar";
-            this.lengthBar.Size = new System.Drawing.Size(648, 45);
+            this.lengthBar.Size = new System.Drawing.Size(747, 45);
             this.lengthBar.TabIndex = 13;
             this.lengthBar.Value = 1;
             this.lengthBar.ValueChanged += new System.EventHandler(this.lengthBar_ValueChanged);
@@ -175,14 +159,49 @@ namespace PasswordManager
             this.lengthLabel.TabIndex = 14;
             this.lengthLabel.Text = "Length: ";
             // 
+            // accountBox
+            // 
+            this.accountBox.Location = new System.Drawing.Point(99, 33);
+            this.accountBox.Name = "accountBox";
+            this.accountBox.Size = new System.Drawing.Size(236, 20);
+            this.accountBox.TabIndex = 15;
+            // 
+            // accountNameLabel
+            // 
+            this.accountNameLabel.AutoSize = true;
+            this.accountNameLabel.Location = new System.Drawing.Point(15, 36);
+            this.accountNameLabel.Name = "accountNameLabel";
+            this.accountNameLabel.Size = new System.Drawing.Size(78, 13);
+            this.accountNameLabel.TabIndex = 16;
+            this.accountNameLabel.Text = "Account Name";
+            // 
+            // statusLabel
+            // 
+            this.statusLabel.AutoSize = true;
+            this.statusLabel.Location = new System.Drawing.Point(209, 203);
+            this.statusLabel.Name = "statusLabel";
+            this.statusLabel.Size = new System.Drawing.Size(0, 13);
+            this.statusLabel.TabIndex = 17;
+            // 
+            // savedAccounts
+            // 
+            this.savedAccounts.FormattingEnabled = true;
+            this.savedAccounts.Location = new System.Drawing.Point(19, 236);
+            this.savedAccounts.Name = "savedAccounts";
+            this.savedAccounts.Size = new System.Drawing.Size(803, 368);
+            this.savedAccounts.TabIndex = 18;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(739, 474);
+            this.ClientSize = new System.Drawing.Size(834, 609);
+            this.Controls.Add(this.savedAccounts);
+            this.Controls.Add(this.statusLabel);
+            this.Controls.Add(this.accountNameLabel);
+            this.Controls.Add(this.accountBox);
             this.Controls.Add(this.lengthLabel);
             this.Controls.Add(this.lengthBar);
-            this.Controls.Add(this.savedAccounts);
             this.Controls.Add(this.saveButton);
             this.Controls.Add(this.specialCheck);
             this.Controls.Add(this.upperCheck);
@@ -193,7 +212,6 @@ namespace PasswordManager
             this.Controls.Add(this.passwordLabel);
             this.Controls.Add(this.usernameLabel);
             this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "Form1";
             this.Text = "Password Manager";
@@ -205,8 +223,6 @@ namespace PasswordManager
         }
 
         #endregion
-
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label usernameLabel;
         private System.Windows.Forms.Label passwordLabel;
@@ -217,9 +233,12 @@ namespace PasswordManager
         private System.Windows.Forms.CheckBox upperCheck;
         private System.Windows.Forms.CheckBox specialCheck;
         private System.Windows.Forms.Button saveButton;
-        private System.Windows.Forms.GroupBox savedAccounts;
         private System.Windows.Forms.TrackBar lengthBar;
         private System.Windows.Forms.Label lengthLabel;
+        private System.Windows.Forms.TextBox accountBox;
+        private System.Windows.Forms.Label accountNameLabel;
+        private System.Windows.Forms.Label statusLabel;
+        private System.Windows.Forms.ListBox savedAccounts;
     }
 }
 

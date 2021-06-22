@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace PasswordManager
 {
@@ -68,6 +69,20 @@ namespace PasswordManager
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            var saveLocation = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
+            var path = Path.Combine(saveLocation, "accounts.dat");
+            if (Directory.Exists(path))
+            {
+                FileStream fStream = new FileStream(path, FileMode.Open, FileAccess.Read);
+                StreamReader FileReader = new StreamReader(fStream);
+                while (!FileReader.EndOfStream)
+                {
+                    string line = FileReader.ReadLine();
+
+                }
+                FileReader.Close();
+            }
+
             lengthBar.Value = length;
             lengthLabel.Text = "Length: " + lengthBar.Value;
             length = lengthBar.Value;
@@ -77,6 +92,32 @@ namespace PasswordManager
         {
             lengthLabel.Text = "Length: " + lengthBar.Value;
             length = lengthBar.Value;
+        }
+
+        private void saveButton_Click(object sender, EventArgs e)
+        {
+            if (accountBox.Text != "" && textBox2.Text != "")
+            {
+                var saveLocation = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
+                var path = Path.Combine(saveLocation, "accounts.dat");
+                string[] lines = new string[] { accountBox.Text, textBox1.Text, textBox2.Text };
+                string Message = "Account Name: " + lines[0] + "; Username:" + lines[1] + "; Password: " + lines[2];
+
+                FileStream fStream = new FileStream(path, FileMode.Append, FileAccess.Write);
+                StreamWriter FileWriter = new StreamWriter(fStream);
+                FileWriter.BaseStream.Seek(0, SeekOrigin.End);
+                FileWriter.WriteLine(Message);
+                FileWriter.Flush();
+                FileWriter.Close();
+                statusLabel.Text = "";
+
+                Button accountButton = new Button();
+                accountButton.Text = "Test";
+                savedAccounts.Items.Add(accountButton);
+            } else
+            {
+                statusLabel.Text = "Data was not Inputted Correctly: Please input a Account Name and Password";
+            }
         }
     }
 }
