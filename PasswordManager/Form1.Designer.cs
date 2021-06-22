@@ -41,7 +41,9 @@ namespace PasswordManager
             this.specialCheck = new System.Windows.Forms.CheckBox();
             this.saveButton = new System.Windows.Forms.Button();
             this.savedAccounts = new System.Windows.Forms.GroupBox();
-            this.seePassword = new System.Windows.Forms.CheckBox();
+            this.lengthBar = new System.Windows.Forms.TrackBar();
+            this.lengthLabel = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.lengthBar)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -73,7 +75,7 @@ namespace PasswordManager
             // passwordLabel
             // 
             this.passwordLabel.AutoSize = true;
-            this.passwordLabel.Location = new System.Drawing.Point(16, 108);
+            this.passwordLabel.Location = new System.Drawing.Point(16, 104);
             this.passwordLabel.Name = "passwordLabel";
             this.passwordLabel.Size = new System.Drawing.Size(53, 13);
             this.passwordLabel.TabIndex = 3;
@@ -81,7 +83,7 @@ namespace PasswordManager
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(75, 105);
+            this.textBox2.Location = new System.Drawing.Point(75, 101);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(185, 20);
             this.textBox2.TabIndex = 4;
@@ -153,25 +155,33 @@ namespace PasswordManager
             this.savedAccounts.TabStop = false;
             this.savedAccounts.Text = "Saved Accounts";
             // 
-            // seePassword
+            // lengthBar
             // 
-            this.seePassword.Appearance = System.Windows.Forms.Appearance.Button;
-            this.seePassword.AutoSize = true;
-            this.seePassword.Location = new System.Drawing.Point(308, 135);
-            this.seePassword.Name = "seePassword";
-            this.seePassword.Size = new System.Drawing.Size(85, 23);
-            this.seePassword.TabIndex = 12;
-            this.seePassword.Text = "See Password";
-            this.seePassword.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.seePassword.UseVisualStyleBackColor = true;
-            this.seePassword.CheckedChanged += new System.EventHandler(this.seePassword_CheckedChanged);
+            this.lengthBar.Location = new System.Drawing.Point(75, 147);
+            this.lengthBar.Maximum = 100;
+            this.lengthBar.Minimum = 1;
+            this.lengthBar.Name = "lengthBar";
+            this.lengthBar.Size = new System.Drawing.Size(648, 45);
+            this.lengthBar.TabIndex = 13;
+            this.lengthBar.Value = 1;
+            this.lengthBar.ValueChanged += new System.EventHandler(this.lengthBar_ValueChanged);
+            // 
+            // lengthLabel
+            // 
+            this.lengthLabel.AutoSize = true;
+            this.lengthLabel.Location = new System.Drawing.Point(12, 158);
+            this.lengthLabel.Name = "lengthLabel";
+            this.lengthLabel.Size = new System.Drawing.Size(46, 13);
+            this.lengthLabel.TabIndex = 14;
+            this.lengthLabel.Text = "Length: ";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(739, 474);
-            this.Controls.Add(this.seePassword);
+            this.Controls.Add(this.lengthLabel);
+            this.Controls.Add(this.lengthBar);
             this.Controls.Add(this.savedAccounts);
             this.Controls.Add(this.saveButton);
             this.Controls.Add(this.specialCheck);
@@ -184,8 +194,11 @@ namespace PasswordManager
             this.Controls.Add(this.usernameLabel);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Password Manager";
+            this.Load += new System.EventHandler(this.Form1_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.lengthBar)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -205,7 +218,8 @@ namespace PasswordManager
         private System.Windows.Forms.CheckBox specialCheck;
         private System.Windows.Forms.Button saveButton;
         private System.Windows.Forms.GroupBox savedAccounts;
-        private System.Windows.Forms.CheckBox seePassword;
+        private System.Windows.Forms.TrackBar lengthBar;
+        private System.Windows.Forms.Label lengthLabel;
     }
 }
 
