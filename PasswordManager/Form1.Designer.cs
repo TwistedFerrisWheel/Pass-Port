@@ -83,7 +83,6 @@ namespace PasswordManager
             // 
             this.textBox2.Location = new System.Drawing.Point(75, 105);
             this.textBox2.Name = "textBox2";
-            this.textBox2.PasswordChar = '*';
             this.textBox2.Size = new System.Drawing.Size(185, 20);
             this.textBox2.TabIndex = 4;
             // 
@@ -165,6 +164,7 @@ namespace PasswordManager
             this.seePassword.Text = "See Password";
             this.seePassword.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.seePassword.UseVisualStyleBackColor = true;
+            this.seePassword.CheckedChanged += new System.EventHandler(this.seePassword_CheckedChanged);
             // 
             // Form1
             // 
