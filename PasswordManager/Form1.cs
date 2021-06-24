@@ -168,7 +168,16 @@ namespace PasswordManager
         {
             if (savedAccounts.SelectedIndex > -1)
             {
+                var saveLocation = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
+                var path = Path.Combine(saveLocation, "accounts.dat");
+                List<string> linesList = File.ReadAllLines(path).ToList();
+
+                linesList.RemoveAt(savedAccounts.SelectedIndex);
+
+                File.WriteAllLines(path, linesList.ToArray());
+
                 savedAccounts.Items.RemoveAt(savedAccounts.SelectedIndex);
+
             }
         }
     }
