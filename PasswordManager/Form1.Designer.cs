@@ -45,6 +45,7 @@ namespace PasswordManager
             this.accountNameLabel = new System.Windows.Forms.Label();
             this.statusLabel = new System.Windows.Forms.Label();
             this.savedAccounts = new System.Windows.Forms.ListBox();
+            this.deleteAccountButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.lengthBar)).BeginInit();
             this.SuspendLayout();
             // 
@@ -190,12 +191,24 @@ namespace PasswordManager
             this.savedAccounts.Name = "savedAccounts";
             this.savedAccounts.Size = new System.Drawing.Size(803, 368);
             this.savedAccounts.TabIndex = 18;
+            this.savedAccounts.SelectedIndexChanged += new System.EventHandler(this.savedAccounts_SelectedIndexChanged);
+            // 
+            // deleteAccountButton
+            // 
+            this.deleteAccountButton.Location = new System.Drawing.Point(734, 207);
+            this.deleteAccountButton.Name = "deleteAccountButton";
+            this.deleteAccountButton.Size = new System.Drawing.Size(88, 23);
+            this.deleteAccountButton.TabIndex = 19;
+            this.deleteAccountButton.Text = "Delete";
+            this.deleteAccountButton.UseVisualStyleBackColor = true;
+            this.deleteAccountButton.Click += new System.EventHandler(this.deleteAccountButton_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(834, 609);
+            this.Controls.Add(this.deleteAccountButton);
             this.Controls.Add(this.savedAccounts);
             this.Controls.Add(this.statusLabel);
             this.Controls.Add(this.accountNameLabel);
@@ -239,6 +252,7 @@ namespace PasswordManager
         private System.Windows.Forms.Label accountNameLabel;
         private System.Windows.Forms.Label statusLabel;
         private System.Windows.Forms.ListBox savedAccounts;
+        private System.Windows.Forms.Button deleteAccountButton;
     }
 }
 
