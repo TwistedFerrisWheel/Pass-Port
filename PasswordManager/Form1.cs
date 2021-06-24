@@ -136,7 +136,7 @@ namespace PasswordManager
 
         private void saveButton_Click(object sender, EventArgs e)
         {
-            if (accountBox.Text != "" && textBox2.Text != "")
+            if (accountBox.Text != "" && textBox1.Text != "" && textBox2.Text != "")
             {
                 var saveLocation = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
                 var path = Path.Combine(saveLocation, "accounts.dat");
@@ -150,12 +150,14 @@ namespace PasswordManager
                 FileWriter.Flush();
                 FileWriter.Close();
                 statusLabel.Text = "";
-
+                accountBox.Text = "";
+                textBox1.Text = "";
+                textBox2.Text = "";
                 loadData();
 
             } else
             {
-                statusLabel.Text = "Data was not Inputted Correctly: Please input a Account Name and Password";
+                statusLabel.Text = "Data was not Inputted Correctly";
             }
         }
 
@@ -179,6 +181,46 @@ namespace PasswordManager
                 savedAccounts.Items.RemoveAt(savedAccounts.SelectedIndex);
 
             }
+        }
+
+        private void lengthBar_Scroll(object sender, EventArgs e)
+        {
+
+        }
+
+        private void checkButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lowerCheck_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void upperCheck_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void specialCheck_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void accountBox_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

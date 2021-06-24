@@ -29,6 +29,7 @@ namespace PasswordManager
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.usernameLabel = new System.Windows.Forms.Label();
             this.passwordLabel = new System.Windows.Forms.Label();
@@ -51,14 +52,20 @@ namespace PasswordManager
             // 
             // textBox1
             // 
+            this.textBox1.BackColor = System.Drawing.SystemColors.ButtonShadow;
+            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBox1.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.textBox1.Location = new System.Drawing.Point(106, 64);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(236, 20);
             this.textBox1.TabIndex = 1;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // usernameLabel
             // 
             this.usernameLabel.AutoSize = true;
+            this.usernameLabel.BackColor = System.Drawing.Color.Transparent;
+            this.usernameLabel.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.usernameLabel.Location = new System.Drawing.Point(15, 67);
             this.usernameLabel.Name = "usernameLabel";
             this.usernameLabel.Size = new System.Drawing.Size(85, 13);
@@ -68,6 +75,8 @@ namespace PasswordManager
             // passwordLabel
             // 
             this.passwordLabel.AutoSize = true;
+            this.passwordLabel.BackColor = System.Drawing.Color.Transparent;
+            this.passwordLabel.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.passwordLabel.Location = new System.Drawing.Point(16, 100);
             this.passwordLabel.Name = "passwordLabel";
             this.passwordLabel.Size = new System.Drawing.Size(53, 13);
@@ -76,72 +85,97 @@ namespace PasswordManager
             // 
             // textBox2
             // 
+            this.textBox2.BackColor = System.Drawing.SystemColors.ButtonShadow;
+            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBox2.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.textBox2.Location = new System.Drawing.Point(75, 97);
             this.textBox2.Name = "textBox2";
+            this.textBox2.PasswordChar = '•';
             this.textBox2.Size = new System.Drawing.Size(185, 20);
             this.textBox2.TabIndex = 4;
+            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // checkButton
             // 
+            this.checkButton.BackColor = System.Drawing.SystemColors.ButtonShadow;
+            this.checkButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.checkButton.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.checkButton.Location = new System.Drawing.Point(266, 90);
             this.checkButton.Name = "checkButton";
             this.checkButton.Size = new System.Drawing.Size(79, 34);
             this.checkButton.TabIndex = 5;
             this.checkButton.Text = "Check";
-            this.checkButton.UseVisualStyleBackColor = true;
+            this.checkButton.UseVisualStyleBackColor = false;
+            this.checkButton.Click += new System.EventHandler(this.checkButton_Click);
             // 
             // generateButton
             // 
+            this.generateButton.BackColor = System.Drawing.SystemColors.ButtonShadow;
+            this.generateButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.generateButton.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.generateButton.Location = new System.Drawing.Point(351, 91);
             this.generateButton.Name = "generateButton";
             this.generateButton.Size = new System.Drawing.Size(75, 33);
             this.generateButton.TabIndex = 6;
             this.generateButton.Text = "Generate";
-            this.generateButton.UseVisualStyleBackColor = true;
+            this.generateButton.UseVisualStyleBackColor = false;
             this.generateButton.Click += new System.EventHandler(this.button2_Click);
             // 
             // lowerCheck
             // 
             this.lowerCheck.AutoSize = true;
+            this.lowerCheck.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.lowerCheck.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.lowerCheck.Location = new System.Drawing.Point(432, 100);
             this.lowerCheck.Name = "lowerCheck";
             this.lowerCheck.Size = new System.Drawing.Size(109, 17);
             this.lowerCheck.TabIndex = 7;
             this.lowerCheck.Text = "Lower Characters";
-            this.lowerCheck.UseVisualStyleBackColor = true;
+            this.lowerCheck.UseVisualStyleBackColor = false;
+            this.lowerCheck.CheckedChanged += new System.EventHandler(this.lowerCheck_CheckedChanged);
             // 
             // upperCheck
             // 
             this.upperCheck.AutoSize = true;
+            this.upperCheck.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.upperCheck.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.upperCheck.Location = new System.Drawing.Point(547, 100);
             this.upperCheck.Name = "upperCheck";
             this.upperCheck.Size = new System.Drawing.Size(109, 17);
             this.upperCheck.TabIndex = 8;
             this.upperCheck.Text = "Upper Characters";
-            this.upperCheck.UseVisualStyleBackColor = true;
+            this.upperCheck.UseVisualStyleBackColor = false;
+            this.upperCheck.CheckedChanged += new System.EventHandler(this.upperCheck_CheckedChanged);
             // 
             // specialCheck
             // 
             this.specialCheck.AutoSize = true;
+            this.specialCheck.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.specialCheck.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.specialCheck.Location = new System.Drawing.Point(662, 100);
             this.specialCheck.Name = "specialCheck";
             this.specialCheck.Size = new System.Drawing.Size(115, 17);
             this.specialCheck.TabIndex = 9;
             this.specialCheck.Text = "Special Characters";
-            this.specialCheck.UseVisualStyleBackColor = true;
+            this.specialCheck.UseVisualStyleBackColor = false;
+            this.specialCheck.CheckedChanged += new System.EventHandler(this.specialCheck_CheckedChanged);
             // 
             // saveButton
             // 
+            this.saveButton.BackColor = System.Drawing.SystemColors.ButtonShadow;
+            this.saveButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.saveButton.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.saveButton.Location = new System.Drawing.Point(18, 198);
             this.saveButton.Name = "saveButton";
             this.saveButton.Size = new System.Drawing.Size(185, 23);
             this.saveButton.TabIndex = 10;
             this.saveButton.Text = "Save Account";
-            this.saveButton.UseVisualStyleBackColor = true;
+            this.saveButton.UseVisualStyleBackColor = false;
             this.saveButton.Click += new System.EventHandler(this.saveButton_Click);
             // 
             // lengthBar
             // 
+            this.lengthBar.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.lengthBar.Location = new System.Drawing.Point(75, 147);
             this.lengthBar.Maximum = 100;
             this.lengthBar.Minimum = 1;
@@ -149,12 +183,14 @@ namespace PasswordManager
             this.lengthBar.Size = new System.Drawing.Size(747, 45);
             this.lengthBar.TabIndex = 13;
             this.lengthBar.Value = 1;
+            this.lengthBar.Scroll += new System.EventHandler(this.lengthBar_Scroll);
             this.lengthBar.ValueChanged += new System.EventHandler(this.lengthBar_ValueChanged);
             // 
             // lengthLabel
             // 
             this.lengthLabel.AutoSize = true;
-            this.lengthLabel.Location = new System.Drawing.Point(12, 158);
+            this.lengthLabel.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.lengthLabel.Location = new System.Drawing.Point(15, 158);
             this.lengthLabel.Name = "lengthLabel";
             this.lengthLabel.Size = new System.Drawing.Size(46, 13);
             this.lengthLabel.TabIndex = 14;
@@ -162,14 +198,20 @@ namespace PasswordManager
             // 
             // accountBox
             // 
+            this.accountBox.BackColor = System.Drawing.SystemColors.ButtonShadow;
+            this.accountBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.accountBox.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.accountBox.Location = new System.Drawing.Point(99, 33);
             this.accountBox.Name = "accountBox";
             this.accountBox.Size = new System.Drawing.Size(236, 20);
             this.accountBox.TabIndex = 15;
+            this.accountBox.TextChanged += new System.EventHandler(this.accountBox_TextChanged);
             // 
             // accountNameLabel
             // 
             this.accountNameLabel.AutoSize = true;
+            this.accountNameLabel.BackColor = System.Drawing.Color.Transparent;
+            this.accountNameLabel.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.accountNameLabel.Location = new System.Drawing.Point(15, 36);
             this.accountNameLabel.Name = "accountNameLabel";
             this.accountNameLabel.Size = new System.Drawing.Size(78, 13);
@@ -186,6 +228,8 @@ namespace PasswordManager
             // 
             // savedAccounts
             // 
+            this.savedAccounts.BackColor = System.Drawing.SystemColors.ButtonShadow;
+            this.savedAccounts.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.savedAccounts.FormattingEnabled = true;
             this.savedAccounts.Location = new System.Drawing.Point(19, 236);
             this.savedAccounts.Name = "savedAccounts";
@@ -195,18 +239,22 @@ namespace PasswordManager
             // 
             // deleteAccountButton
             // 
+            this.deleteAccountButton.BackColor = System.Drawing.SystemColors.ButtonShadow;
+            this.deleteAccountButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.deleteAccountButton.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.deleteAccountButton.Location = new System.Drawing.Point(734, 207);
             this.deleteAccountButton.Name = "deleteAccountButton";
             this.deleteAccountButton.Size = new System.Drawing.Size(88, 23);
             this.deleteAccountButton.TabIndex = 19;
             this.deleteAccountButton.Text = "Delete";
-            this.deleteAccountButton.UseVisualStyleBackColor = true;
+            this.deleteAccountButton.UseVisualStyleBackColor = false;
             this.deleteAccountButton.Click += new System.EventHandler(this.deleteAccountButton_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.ClientSize = new System.Drawing.Size(834, 609);
             this.Controls.Add(this.deleteAccountButton);
             this.Controls.Add(this.savedAccounts);
@@ -226,6 +274,7 @@ namespace PasswordManager
             this.Controls.Add(this.usernameLabel);
             this.Controls.Add(this.textBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
             this.Text = "Password Manager";
             this.Load += new System.EventHandler(this.Form1_Load);
