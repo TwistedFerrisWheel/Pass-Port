@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
+using System.Security.Cryptography;
 
 namespace PasswordManager
 {
@@ -66,6 +67,7 @@ namespace PasswordManager
         private void button2_Click(object sender, EventArgs e)
         {
             textBox2.Text = GeneratePassword();
+            statusLabel.Text = "New Password was Generated";
         }
 
         protected void retriveUsernames()
@@ -120,12 +122,19 @@ namespace PasswordManager
                 FileReader.Close();
             }
         }
-        private void Form1_Load(object sender, EventArgs e)
+
+        private void startup()
         {
             loadData();
+            statusLabel.Text = "";
             lengthBar.Value = length;
             lengthLabel.Text = "Length: " + lengthBar.Value;
             length = lengthBar.Value;
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            startup();
         }
 
         private void lengthBar_ValueChanged(object sender, EventArgs e)
@@ -179,8 +188,12 @@ namespace PasswordManager
                 File.WriteAllLines(path, linesList.ToArray());
 
                 savedAccounts.Items.RemoveAt(savedAccounts.SelectedIndex);
-
+                statusLabel.Text = "Account was Deleted!";
+            } else
+            {
+                statusLabel.Text = "No Account Selected";
             }
+
         }
 
         private void lengthBar_Scroll(object sender, EventArgs e)
