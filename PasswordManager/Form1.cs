@@ -123,6 +123,7 @@ namespace PasswordManager
         private void startup()
         {
             loadData();
+            statusLabel.Text = "";
             lengthBar.Value = length;
             lengthLabel.Text = "Length: " + lengthBar.Value;
             length = lengthBar.Value;
