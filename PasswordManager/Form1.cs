@@ -8,7 +8,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
-using System.Security.Cryptography;
 
 namespace PasswordManager
 {
@@ -18,7 +17,6 @@ namespace PasswordManager
         protected int length = 10;
         protected char[] totalChars = new char[] {'a','b','c','d','e','f','g','h','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', '?', '!', '@', '#', '$', '%', '^', '&', '*', '(', ')' };
         protected List<string> accountData = new List<string>();
-        protected int ID = 0;
         public Form1()
         {
             InitializeComponent();
@@ -77,7 +75,7 @@ namespace PasswordManager
                 if (index % 3 == 0)
                     savedAccounts.Items.Add(accountData[index] + "/" + accountData[index + 1]);
             }
-
+           
 
         }
 
@@ -110,7 +108,7 @@ namespace PasswordManager
                 StreamReader FileReader = new StreamReader(fStream);
                 while (!FileReader.EndOfStream)
                 {
-                    string line = FileReader.ReadLine();
+                    string line = Crypt.Decrypt(Crypt.encryptKey,FileReader.ReadLine());
                     string[] accountInfo = line.Split(';');
                     for (int index = 0; index < accountInfo.Length; index++)
                     {
@@ -122,7 +120,6 @@ namespace PasswordManager
                 FileReader.Close();
             }
         }
-
         private void startup()
         {
             loadData();
@@ -135,7 +132,7 @@ namespace PasswordManager
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            startup();
+
         }
 
         private void lengthBar_ValueChanged(object sender, EventArgs e)
@@ -156,7 +153,7 @@ namespace PasswordManager
                 FileStream fStream = new FileStream(path, FileMode.Append, FileAccess.Write);
                 StreamWriter FileWriter = new StreamWriter(fStream);
                 FileWriter.BaseStream.Seek(0, SeekOrigin.End);
-                FileWriter.WriteLine(Message);
+                FileWriter.WriteLine(Crypt.Encrypt(Crypt.encryptKey,Message));
                 FileWriter.Flush();
                 FileWriter.Close();
                 statusLabel.Text = "";
@@ -190,7 +187,6 @@ namespace PasswordManager
                 linesList.RemoveAt(savedAccounts.SelectedIndex);
 
                 File.WriteAllLines(path, linesList.ToArray());
-
                 savedAccounts.Items.RemoveAt(savedAccounts.SelectedIndex);
                 statusLabel.Text = "Account was Deleted!";
             } else
@@ -243,6 +239,67 @@ namespace PasswordManager
         private void accountBox_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void textBox3_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void loginButton_Click(object sender, EventArgs e)
+        {
+            var saveLocation = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
+            var path = Path.Combine(saveLocation, "MasterPass.enc");
+
+            string line = "";
+            if (File.Exists(path))
+            {
+                FileStream fStream = new FileStream(path, FileMode.Open, FileAccess.Read);
+                StreamReader FileReader = new StreamReader(fStream);
+                while (!FileReader.EndOfStream)
+                {
+                    line = Crypt.Decrypt(Crypt.encryptKey,FileReader.ReadLine());
+                }
+                FileReader.Close();
+
+                if (line == masterTextBox.Text)
+                {
+                    panel1.Visible = false;
+                    startup();
+                }
+                else
+                    MessageBox.Show("Incorrect Master Password!", "Master Password Problem");
+            } else
+            {
+                MessageBox.Show("Master Password Does not Exsist", "Master Password Problem");
+            }
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            var saveLocation = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
+            var path = Path.Combine(saveLocation, "MasterPass.enc");
+
+
+            if (masterTextBox.Text.Length > 10)
+            {
+                if (!File.Exists(path))
+                {
+                    FileStream fStream = new FileStream(path, FileMode.Create, FileAccess.Write);
+                    StreamWriter FileWriter = new StreamWriter(fStream);
+                    FileWriter.BaseStream.Seek(0, SeekOrigin.End);
+                    FileWriter.WriteLine(Crypt.Encrypt(Crypt.encryptKey,masterTextBox.Text));
+                    FileWriter.Flush();
+                    FileWriter.Close();
+                } else
+                {
+                    MessageBox.Show("Master Password Already set!");
+                }
+            } else
+            {
+                MessageBox.Show("Make sure password is more than 12 characters", "Master Password Problem");
+            }
         }
     }
 }

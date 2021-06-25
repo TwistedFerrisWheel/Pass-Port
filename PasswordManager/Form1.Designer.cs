@@ -48,8 +48,14 @@ namespace PasswordManager
             this.savedAccounts = new System.Windows.Forms.ListBox();
             this.deleteAccountButton = new System.Windows.Forms.Button();
             this.accountsGroup = new System.Windows.Forms.GroupBox();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
+            this.loginButton = new System.Windows.Forms.Button();
+            this.masterTextBox = new System.Windows.Forms.TextBox();
+            this.masterPassLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.lengthBar)).BeginInit();
             this.accountsGroup.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // textBox1
@@ -270,12 +276,69 @@ namespace PasswordManager
             this.accountsGroup.TabStop = false;
             this.accountsGroup.Text = "Accounts";
             // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.SystemColors.GrayText;
+            this.panel1.Controls.Add(this.button1);
+            this.panel1.Controls.Add(this.loginButton);
+            this.panel1.Controls.Add(this.masterTextBox);
+            this.panel1.Controls.Add(this.masterPassLabel);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(824, 598);
+            this.panel1.TabIndex = 21;
+            // 
+            // button1
+            // 
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Location = new System.Drawing.Point(316, 300);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(181, 49);
+            this.button1.TabIndex = 3;
+            this.button1.Text = "Register";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // loginButton
+            // 
+            this.loginButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.loginButton.Location = new System.Drawing.Point(316, 245);
+            this.loginButton.Name = "loginButton";
+            this.loginButton.Size = new System.Drawing.Size(181, 49);
+            this.loginButton.TabIndex = 2;
+            this.loginButton.Text = "Login";
+            this.loginButton.UseVisualStyleBackColor = true;
+            this.loginButton.Click += new System.EventHandler(this.loginButton_Click);
+            // 
+            // masterTextBox
+            // 
+            this.masterTextBox.BackColor = System.Drawing.SystemColors.GrayText;
+            this.masterTextBox.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.masterTextBox.Location = new System.Drawing.Point(316, 219);
+            this.masterTextBox.Name = "masterTextBox";
+            this.masterTextBox.PasswordChar = '•';
+            this.masterTextBox.Size = new System.Drawing.Size(181, 20);
+            this.masterTextBox.TabIndex = 1;
+            this.masterTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // masterPassLabel
+            // 
+            this.masterPassLabel.AutoSize = true;
+            this.masterPassLabel.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.masterPassLabel.Location = new System.Drawing.Point(363, 196);
+            this.masterPassLabel.Name = "masterPassLabel";
+            this.masterPassLabel.Size = new System.Drawing.Size(88, 13);
+            this.masterPassLabel.TabIndex = 0;
+            this.masterPassLabel.Text = "Master Password";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.ClientSize = new System.Drawing.Size(824, 598);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.accountsGroup);
             this.Controls.Add(this.accountNameLabel);
             this.Controls.Add(this.accountBox);
@@ -298,6 +361,8 @@ namespace PasswordManager
             ((System.ComponentModel.ISupportInitialize)(this.lengthBar)).EndInit();
             this.accountsGroup.ResumeLayout(false);
             this.accountsGroup.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -322,6 +387,11 @@ namespace PasswordManager
         private System.Windows.Forms.ListBox savedAccounts;
         private System.Windows.Forms.Button deleteAccountButton;
         private System.Windows.Forms.GroupBox accountsGroup;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label masterPassLabel;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button loginButton;
+        private System.Windows.Forms.TextBox masterTextBox;
     }
 }
 
