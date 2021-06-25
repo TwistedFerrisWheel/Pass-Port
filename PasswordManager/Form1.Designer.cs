@@ -321,6 +321,7 @@ namespace PasswordManager
             this.masterTextBox.Size = new System.Drawing.Size(181, 20);
             this.masterTextBox.TabIndex = 1;
             this.masterTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.masterTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.masterTextBox_KeyPress);
             // 
             // masterPassLabel
             // 
@@ -334,6 +335,7 @@ namespace PasswordManager
             // 
             // Form1
             // 
+            this.AcceptButton = this.loginButton;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDarkDark;

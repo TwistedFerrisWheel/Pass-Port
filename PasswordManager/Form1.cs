@@ -123,7 +123,6 @@ namespace PasswordManager
         private void startup()
         {
             loadData();
-            statusLabel.Text = "";
             lengthBar.Value = length;
             lengthLabel.Text = "Length: " + lengthBar.Value;
             length = lengthBar.Value;
@@ -173,6 +172,7 @@ namespace PasswordManager
         private void savedAccounts_SelectedIndexChanged(object sender, EventArgs e)
         {
             Clipboard.SetText(retrivePassword());
+            statusLabel.Text = "Password Copied";
             
         }
 
@@ -246,7 +246,7 @@ namespace PasswordManager
 
         }
 
-        private void loginButton_Click(object sender, EventArgs e)
+        private void Login()
         {
             var saveLocation = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
             var path = Path.Combine(saveLocation, "MasterPass.enc");
@@ -258,7 +258,7 @@ namespace PasswordManager
                 StreamReader FileReader = new StreamReader(fStream);
                 while (!FileReader.EndOfStream)
                 {
-                    line = Crypt.Decrypt(Crypt.encryptKey,FileReader.ReadLine());
+                    line = Crypt.Decrypt(Crypt.encryptKey, FileReader.ReadLine());
                 }
                 FileReader.Close();
 
@@ -269,11 +269,16 @@ namespace PasswordManager
                 }
                 else
                     MessageBox.Show("Incorrect Master Password!", "Master Password Problem");
-            } else
+            }
+            else
             {
                 MessageBox.Show("Master Password Does not Exsist", "Master Password Problem");
             }
+        }
 
+        private void loginButton_Click(object sender, EventArgs e)
+        {
+            Login();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -292,6 +297,7 @@ namespace PasswordManager
                     FileWriter.WriteLine(Crypt.Encrypt(Crypt.encryptKey,masterTextBox.Text));
                     FileWriter.Flush();
                     FileWriter.Close();
+                    MessageBox.Show("Master Password has now been set! Make sure to remember it", "Master Password Success");
                 } else
                 {
                     MessageBox.Show("Master Password Already set!");
@@ -299,6 +305,14 @@ namespace PasswordManager
             } else
             {
                 MessageBox.Show("Make sure password is more than 12 characters", "Master Password Problem");
+            }
+        }
+
+        private void masterTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                Login();
             }
         }
     }
