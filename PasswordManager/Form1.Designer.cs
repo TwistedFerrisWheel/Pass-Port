@@ -194,7 +194,7 @@ namespace PasswordManager
             // 
             this.lengthLabel.AutoSize = true;
             this.lengthLabel.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.lengthLabel.Location = new System.Drawing.Point(23, 229);
+            this.lengthLabel.Location = new System.Drawing.Point(7, 226);
             this.lengthLabel.Name = "lengthLabel";
             this.lengthLabel.Size = new System.Drawing.Size(46, 13);
             this.lengthLabel.TabIndex = 14;

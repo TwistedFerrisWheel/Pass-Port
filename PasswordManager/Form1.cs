@@ -130,6 +130,7 @@ namespace PasswordManager
             lengthBar.Value = length;
             lengthLabel.Text = "Length: " + lengthBar.Value;
             length = lengthBar.Value;
+            savedAccounts.Sorted = true;
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -164,6 +165,8 @@ namespace PasswordManager
                 textBox2.Text = "";
                 loadData();
 
+                savedAccounts.Sorted = true;
+
             } else
             {
                 statusLabel.Text = "Data was not Inputted Correctly";
@@ -173,6 +176,7 @@ namespace PasswordManager
         private void savedAccounts_SelectedIndexChanged(object sender, EventArgs e)
         {
             Clipboard.SetText(retrivePassword());
+            
         }
 
         private void deleteAccountButton_Click(object sender, EventArgs e)
@@ -203,7 +207,12 @@ namespace PasswordManager
 
         private void checkButton_Click(object sender, EventArgs e)
         {
-
+            DialogResult result = MessageBox.Show("This will redirect to HaveIBeenPwned/Passwords. Is this ok? ", "Redirect?",MessageBoxButtons.YesNo);
+            if (result == DialogResult.Yes)
+            {
+                Clipboard.SetText(textBox2.Text);
+                System.Diagnostics.Process.Start("https://haveibeenpwned.com/Passwords");
+            }
         }
 
         private void lowerCheck_CheckedChanged(object sender, EventArgs e)
