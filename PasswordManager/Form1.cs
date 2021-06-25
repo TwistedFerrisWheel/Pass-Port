@@ -204,10 +204,11 @@ namespace PasswordManager
 
         private void checkButton_Click(object sender, EventArgs e)
         {
-            DialogResult result = MessageBox.Show("This will redirect to HaveIBeenPwned/Passwords. Is this ok? ", "Redirect?",MessageBoxButtons.YesNo);
+            DialogResult result = MessageBox.Show("This will redirect to HaveIBeenPwned/Passwords and will copy the generated password To your clipboard. Is this ok? ", "Redirect?",MessageBoxButtons.YesNo,MessageBoxIcon.Warning);
             if (result == DialogResult.Yes)
             {
-                Clipboard.SetText(textBox2.Text);
+                if (textBox2.Text.Length > 0)
+                    Clipboard.SetText(textBox2.Text);
                 System.Diagnostics.Process.Start("https://haveibeenpwned.com/Passwords");
             }
         }
@@ -298,14 +299,15 @@ namespace PasswordManager
                     FileWriter.WriteLine(Crypt.Encrypt(Crypt.encryptKey,masterTextBox.Text));
                     FileWriter.Flush();
                     FileWriter.Close();
-                    MessageBox.Show("Master Password has now been set! Make sure to remember it", "Master Password Success");
+                    MessageBox.Show("Master Password has now been set! Make sure to remember it", "Master Password Success",MessageBoxButtons.OK,MessageBoxIcon.Exclamation);
+                    masterTextBox.Text = "";
                 } else
                 {
-                    MessageBox.Show("Master Password Already set!");
+                    MessageBox.Show("Master Password Already set!","Master Password Problem", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             } else
             {
-                MessageBox.Show("Make sure password is more than 12 characters", "Master Password Problem");
+                MessageBox.Show("Make sure password is more than 12 characters", "Master Password Problem", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
         }
 
