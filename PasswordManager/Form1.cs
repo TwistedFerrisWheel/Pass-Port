@@ -15,7 +15,7 @@ namespace PasswordManager
     {
         Random rand = new Random();
         protected int length = 10;
-        protected char[] totalChars = new char[] {'a','b','c','d','e','f','g','h','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', '?', '!', '@', '#', '$', '%', '^', '&', '*', '(', ')' };
+        protected char[] totalChars = new char[] {'a','b','c','d','e','f','g','h','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', '?', '!', '@', '#', '$', '%', '^', '&', '*', '(', ')','1','2','3','4','5','6','7','8','9','0'};
         protected List<string> accountData = new List<string>();
         public Form1()
         {
@@ -38,7 +38,7 @@ namespace PasswordManager
                 charDistance = new int[] { 0, 50 };
             }
             else if (lowerCheck.Checked && upperCheck.Checked && specialCheck.Checked)
-                charDistance = new int[] {0,60};
+                charDistance = new int[] {0,69};
 
             //Upper Characters
             if (!lowerCheck.Checked && upperCheck.Checked && !specialCheck.Checked)
@@ -46,12 +46,12 @@ namespace PasswordManager
                 charDistance = new int[] { 26, 50 };
             }
             else if (!lowerCheck.Checked && upperCheck.Checked && specialCheck.Checked)
-                charDistance = new int[] { 26, 60 };
+                charDistance = new int[] { 26, 69 };
 
             //Special Characters
             if (!lowerCheck.Checked && !upperCheck.Checked && specialCheck.Checked)
             {
-                charDistance = new int[] { 51, 60 };
+                charDistance = new int[] { 51, 69 };
             }
 
             for (int chr = 0; chr < length; chr++)
