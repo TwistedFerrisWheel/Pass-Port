@@ -36,9 +36,6 @@ namespace PasswordManager
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.checkButton = new System.Windows.Forms.Button();
             this.generateButton = new System.Windows.Forms.Button();
-            this.lowerCheck = new System.Windows.Forms.CheckBox();
-            this.upperCheck = new System.Windows.Forms.CheckBox();
-            this.specialCheck = new System.Windows.Forms.CheckBox();
             this.saveButton = new System.Windows.Forms.Button();
             this.lengthBar = new System.Windows.Forms.TrackBar();
             this.lengthLabel = new System.Windows.Forms.Label();
@@ -130,45 +127,6 @@ namespace PasswordManager
             this.generateButton.Text = "Generate";
             this.generateButton.UseVisualStyleBackColor = false;
             this.generateButton.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // lowerCheck
-            // 
-            this.lowerCheck.AutoSize = true;
-            this.lowerCheck.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.lowerCheck.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.lowerCheck.Location = new System.Drawing.Point(292, 169);
-            this.lowerCheck.Name = "lowerCheck";
-            this.lowerCheck.Size = new System.Drawing.Size(109, 17);
-            this.lowerCheck.TabIndex = 7;
-            this.lowerCheck.Text = "Lower Characters";
-            this.lowerCheck.UseVisualStyleBackColor = false;
-            this.lowerCheck.CheckedChanged += new System.EventHandler(this.lowerCheck_CheckedChanged);
-            // 
-            // upperCheck
-            // 
-            this.upperCheck.AutoSize = true;
-            this.upperCheck.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.upperCheck.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.upperCheck.Location = new System.Drawing.Point(419, 169);
-            this.upperCheck.Name = "upperCheck";
-            this.upperCheck.Size = new System.Drawing.Size(109, 17);
-            this.upperCheck.TabIndex = 8;
-            this.upperCheck.Text = "Upper Characters";
-            this.upperCheck.UseVisualStyleBackColor = false;
-            this.upperCheck.CheckedChanged += new System.EventHandler(this.upperCheck_CheckedChanged);
-            // 
-            // specialCheck
-            // 
-            this.specialCheck.AutoSize = true;
-            this.specialCheck.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.specialCheck.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.specialCheck.Location = new System.Drawing.Point(352, 192);
-            this.specialCheck.Name = "specialCheck";
-            this.specialCheck.Size = new System.Drawing.Size(115, 17);
-            this.specialCheck.TabIndex = 9;
-            this.specialCheck.Text = "Special Characters";
-            this.specialCheck.UseVisualStyleBackColor = false;
-            this.specialCheck.CheckedChanged += new System.EventHandler(this.specialCheck_CheckedChanged);
             // 
             // saveButton
             // 
@@ -279,6 +237,7 @@ namespace PasswordManager
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.GrayText;
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.loginButton);
             this.panel1.Controls.Add(this.masterTextBox);
@@ -346,9 +305,6 @@ namespace PasswordManager
             this.Controls.Add(this.accountBox);
             this.Controls.Add(this.lengthLabel);
             this.Controls.Add(this.lengthBar);
-            this.Controls.Add(this.specialCheck);
-            this.Controls.Add(this.upperCheck);
-            this.Controls.Add(this.lowerCheck);
             this.Controls.Add(this.generateButton);
             this.Controls.Add(this.checkButton);
             this.Controls.Add(this.textBox2);
@@ -377,9 +333,6 @@ namespace PasswordManager
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Button checkButton;
         private System.Windows.Forms.Button generateButton;
-        private System.Windows.Forms.CheckBox lowerCheck;
-        private System.Windows.Forms.CheckBox upperCheck;
-        private System.Windows.Forms.CheckBox specialCheck;
         private System.Windows.Forms.Button saveButton;
         private System.Windows.Forms.TrackBar lengthBar;
         private System.Windows.Forms.Label lengthLabel;
