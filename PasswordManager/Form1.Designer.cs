@@ -314,7 +314,7 @@ namespace PasswordManager
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
-            this.Text = "Password Manager";
+            this.Text = "Pass-Port";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.lengthBar)).EndInit();
             this.accountsGroup.ResumeLayout(false);
