@@ -14,14 +14,10 @@ namespace PasswordManager
 
         public static string generate(int length)
         {
-
-
-            // Generate random data
             var rnd = new byte[length];
             using (var rng = new RNGCryptoServiceProvider())
                 rng.GetBytes(rnd);
 
-            // Generate the output string
             var allowable = totalChars;
             var len = allowable.Length;
             var characters = new char[length];

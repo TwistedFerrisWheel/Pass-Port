@@ -25,6 +25,7 @@ namespace PasswordManager
         private void button2_Click(object sender, EventArgs e)
         {
             textBox2.Text = Generator.generate(length);
+            SFXHandler.play(Properties.Resources.act_generate);
             statusLabel.Text = "New Password was Generated";
         }
 
@@ -88,6 +89,7 @@ namespace PasswordManager
             lengthLabel.Text = "Length: " + lengthBar.Value;
             length = lengthBar.Value;
             savedAccounts.Sorted = true;
+            lengthBar.Maximum = 128;
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -122,6 +124,8 @@ namespace PasswordManager
                 textBox2.Text = "";
                 loadData();
 
+                SFXHandler.play(Properties.Resources.act_add);
+
                 savedAccounts.Sorted = true;
 
             } else
@@ -154,6 +158,8 @@ namespace PasswordManager
             {
                 statusLabel.Text = "No Account Selected";
             }
+
+            SFXHandler.play(Properties.Resources.act_delete);
 
         }
 
