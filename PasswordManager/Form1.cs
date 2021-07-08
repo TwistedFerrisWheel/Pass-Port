@@ -88,7 +88,6 @@ namespace PasswordManager
             lengthBar.Value = length;
             lengthLabel.Text = "Length: " + lengthBar.Value;
             length = lengthBar.Value;
-            savedAccounts.Sorted = true;
             lengthBar.Maximum = 128;
         }
 
@@ -125,8 +124,6 @@ namespace PasswordManager
                 loadData();
 
                 SFXHandler.play(Properties.Resources.act_add);
-
-                savedAccounts.Sorted = true;
 
             } else
             {

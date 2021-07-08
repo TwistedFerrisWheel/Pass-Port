@@ -268,7 +268,7 @@ namespace PasswordManager
             this.loginButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(69)))), ((int)(((byte)(69)))));
             this.loginButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.loginButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.loginButton.Location = new System.Drawing.Point(532, 260);
+            this.loginButton.Location = new System.Drawing.Point(532, 258);
             this.loginButton.Name = "loginButton";
             this.loginButton.Size = new System.Drawing.Size(91, 45);
             this.loginButton.TabIndex = 2;
