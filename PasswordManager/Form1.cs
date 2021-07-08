@@ -136,7 +136,6 @@ namespace PasswordManager
         {
             Clipboard.SetText(retrivePassword());
             statusLabel.Text = "Password Copied";
-            
         }
 
         private void deleteAccountButton_Click(object sender, EventArgs e)
