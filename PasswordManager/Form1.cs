@@ -109,6 +109,7 @@ namespace PasswordManager
                 var saveLocation = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
                 var path = Path.Combine(saveLocation, "accounts.dat");
                 string[] lines = new string[] {accountBox.Text, textBox1.Text, textBox2.Text };
+
                 string Message = lines[0] + ";" + lines[1] + ";" + lines[2];
 
                 FileStream fStream = new FileStream(path, FileMode.Append, FileAccess.Write);
@@ -142,21 +143,24 @@ namespace PasswordManager
         {
             if (savedAccounts.SelectedIndex > -1)
             {
-                var saveLocation = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
-                var path = Path.Combine(saveLocation, "accounts.dat");
-                List<string> linesList = File.ReadAllLines(path).ToList();
+                DialogResult result = MessageBox.Show("Are you sure you want to delete this account? It cannot be Retrived!", "Account Warning!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                if (result == DialogResult.Yes)
+                {
+                    var saveLocation = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
+                    var path = Path.Combine(saveLocation, "accounts.dat");
+                    List<string> linesList = File.ReadAllLines(path).ToList();
 
-                linesList.RemoveAt(savedAccounts.SelectedIndex);
+                    linesList.RemoveAt(savedAccounts.SelectedIndex);
 
-                File.WriteAllLines(path, linesList.ToArray());
-                savedAccounts.Items.RemoveAt(savedAccounts.SelectedIndex);
-                statusLabel.Text = "Account was Deleted!";
+                    File.WriteAllLines(path, linesList.ToArray());
+                    savedAccounts.Items.RemoveAt(savedAccounts.SelectedIndex);
+                    statusLabel.Text = "Account was Deleted!";
+                    SFXHandler.play(Properties.Resources.act_delete);
+                }
             } else
             {
                 statusLabel.Text = "No Account Selected";
             }
-
-            SFXHandler.play(Properties.Resources.act_delete);
 
         }
 
