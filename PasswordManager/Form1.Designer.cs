@@ -324,7 +324,7 @@ namespace PasswordManager
             this.specialCheck.CheckState = System.Windows.Forms.CheckState.Checked;
             this.specialCheck.Cursor = System.Windows.Forms.Cursors.Hand;
             this.specialCheck.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(143)))), ((int)(((byte)(143)))));
-            this.specialCheck.Location = new System.Drawing.Point(355, 178);
+            this.specialCheck.Location = new System.Drawing.Point(357, 178);
             this.specialCheck.Name = "specialCheck";
             this.specialCheck.Size = new System.Drawing.Size(115, 17);
             this.specialCheck.TabIndex = 2;
