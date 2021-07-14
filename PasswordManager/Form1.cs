@@ -284,5 +284,12 @@ namespace PasswordManager
                 Login();
             }
         }
+
+        private void aboutButton_Click(object sender, EventArgs e)
+        {
+            About.About about = new About.About();
+            about.ShowDialog();
+
+        }
     }
 }
