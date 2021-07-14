@@ -62,6 +62,7 @@ namespace PasswordManager.About
             // githubButton
             // 
             this.githubButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(69)))), ((int)(((byte)(69)))));
+            this.githubButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.githubButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(143)))), ((int)(((byte)(143)))));
             this.githubButton.Location = new System.Drawing.Point(12, 60);
             this.githubButton.Name = "githubButton";
@@ -74,6 +75,7 @@ namespace PasswordManager.About
             // youtubeButton
             // 
             this.youtubeButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(69)))), ((int)(((byte)(69)))));
+            this.youtubeButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.youtubeButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(143)))), ((int)(((byte)(143)))));
             this.youtubeButton.Location = new System.Drawing.Point(93, 60);
             this.youtubeButton.Name = "youtubeButton";
@@ -86,6 +88,7 @@ namespace PasswordManager.About
             // ngButton
             // 
             this.ngButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(69)))), ((int)(((byte)(69)))));
+            this.ngButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ngButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(143)))), ((int)(((byte)(143)))));
             this.ngButton.Location = new System.Drawing.Point(174, 60);
             this.ngButton.Name = "ngButton";
@@ -98,6 +101,7 @@ namespace PasswordManager.About
             // twitterButton
             // 
             this.twitterButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(69)))), ((int)(((byte)(69)))));
+            this.twitterButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.twitterButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(143)))), ((int)(((byte)(143)))));
             this.twitterButton.Location = new System.Drawing.Point(255, 60);
             this.twitterButton.Name = "twitterButton";

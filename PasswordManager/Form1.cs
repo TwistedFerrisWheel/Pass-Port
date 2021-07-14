@@ -24,7 +24,7 @@ namespace PasswordManager
 
         private void button2_Click(object sender, EventArgs e)
         {
-            textBox2.Text = Generator.generate(length);
+            textBox2.Text = Generator.generate(length,specialCheck.Checked);
             SFXHandler.play(Properties.Resources.act_generate);
             statusLabel.Text = "New Password was Generated";
         }
@@ -93,7 +93,7 @@ namespace PasswordManager
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
+         
         }
 
         private void lengthBar_ValueChanged(object sender, EventArgs e)
@@ -289,6 +289,11 @@ namespace PasswordManager
         {
             About.About about = new About.About();
             about.ShowDialog();
+
+        }
+
+        private void specialCheck_CheckedChanged_1(object sender, EventArgs e)
+        {
 
         }
     }

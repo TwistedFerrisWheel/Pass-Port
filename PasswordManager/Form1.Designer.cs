@@ -51,6 +51,7 @@ namespace PasswordManager
             this.masterTextBox = new System.Windows.Forms.TextBox();
             this.masterPassLabel = new System.Windows.Forms.Label();
             this.aboutButton = new System.Windows.Forms.Button();
+            this.specialCheck = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.lengthBar)).BeginInit();
             this.accountsGroup.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -106,6 +107,7 @@ namespace PasswordManager
             // checkButton
             // 
             this.checkButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(69)))), ((int)(((byte)(69)))));
+            this.checkButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.checkButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(143)))), ((int)(((byte)(143)))));
             this.checkButton.Location = new System.Drawing.Point(220, 135);
             this.checkButton.Name = "checkButton";
@@ -118,6 +120,7 @@ namespace PasswordManager
             // generateButton
             // 
             this.generateButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(69)))), ((int)(((byte)(69)))));
+            this.generateButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.generateButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(143)))), ((int)(((byte)(143)))));
             this.generateButton.Location = new System.Drawing.Point(534, 135);
             this.generateButton.Name = "generateButton";
@@ -130,6 +133,7 @@ namespace PasswordManager
             // saveButton
             // 
             this.saveButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(69)))), ((int)(((byte)(69)))));
+            this.saveButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.saveButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(143)))), ((int)(((byte)(143)))));
             this.saveButton.Location = new System.Drawing.Point(12, 49);
             this.saveButton.Name = "saveButton";
@@ -198,6 +202,7 @@ namespace PasswordManager
             // savedAccounts
             // 
             this.savedAccounts.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(69)))), ((int)(((byte)(69)))));
+            this.savedAccounts.Cursor = System.Windows.Forms.Cursors.Cross;
             this.savedAccounts.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(143)))), ((int)(((byte)(143)))));
             this.savedAccounts.FormattingEnabled = true;
             this.savedAccounts.Location = new System.Drawing.Point(187, 17);
@@ -209,6 +214,7 @@ namespace PasswordManager
             // deleteAccountButton
             // 
             this.deleteAccountButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(69)))), ((int)(((byte)(69)))));
+            this.deleteAccountButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.deleteAccountButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(143)))), ((int)(((byte)(143)))));
             this.deleteAccountButton.Location = new System.Drawing.Point(12, 78);
             this.deleteAccountButton.Name = "deleteAccountButton";
@@ -250,6 +256,7 @@ namespace PasswordManager
             // 
             this.button1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(69)))), ((int)(((byte)(69)))));
+            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button1.Location = new System.Drawing.Point(176, 260);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(91, 45);
@@ -263,6 +270,7 @@ namespace PasswordManager
             this.loginButton.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.loginButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(69)))), ((int)(((byte)(69)))));
             this.loginButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.loginButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.loginButton.Location = new System.Drawing.Point(532, 258);
             this.loginButton.Name = "loginButton";
             this.loginButton.Size = new System.Drawing.Size(91, 45);
@@ -299,14 +307,30 @@ namespace PasswordManager
             // aboutButton
             // 
             this.aboutButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(69)))), ((int)(((byte)(69)))));
+            this.aboutButton.Cursor = System.Windows.Forms.Cursors.Help;
             this.aboutButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(143)))), ((int)(((byte)(143)))));
-            this.aboutButton.Location = new System.Drawing.Point(10, 7);
+            this.aboutButton.Location = new System.Drawing.Point(0, 0);
             this.aboutButton.Name = "aboutButton";
             this.aboutButton.Size = new System.Drawing.Size(75, 42);
             this.aboutButton.TabIndex = 22;
             this.aboutButton.Text = "About";
             this.aboutButton.UseVisualStyleBackColor = false;
             this.aboutButton.Click += new System.EventHandler(this.aboutButton_Click);
+            // 
+            // specialCheck
+            // 
+            this.specialCheck.AutoSize = true;
+            this.specialCheck.Checked = true;
+            this.specialCheck.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.specialCheck.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.specialCheck.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(143)))), ((int)(((byte)(143)))));
+            this.specialCheck.Location = new System.Drawing.Point(355, 178);
+            this.specialCheck.Name = "specialCheck";
+            this.specialCheck.Size = new System.Drawing.Size(115, 17);
+            this.specialCheck.TabIndex = 2;
+            this.specialCheck.Text = "Special Characters";
+            this.specialCheck.UseVisualStyleBackColor = true;
+            this.specialCheck.CheckedChanged += new System.EventHandler(this.specialCheck_CheckedChanged_1);
             // 
             // Form1
             // 
@@ -316,10 +340,10 @@ namespace PasswordManager
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(47)))), ((int)(((byte)(47)))));
             this.ClientSize = new System.Drawing.Size(824, 598);
-            this.Controls.Add(this.aboutButton);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.accountsGroup);
             this.Controls.Add(this.accountNameLabel);
+            this.Controls.Add(this.specialCheck);
             this.Controls.Add(this.accountBox);
             this.Controls.Add(this.lengthLabel);
             this.Controls.Add(this.lengthBar);
@@ -329,6 +353,7 @@ namespace PasswordManager
             this.Controls.Add(this.passwordLabel);
             this.Controls.Add(this.usernameLabel);
             this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.aboutButton);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
@@ -369,6 +394,7 @@ namespace PasswordManager
         private System.Windows.Forms.Button loginButton;
         private System.Windows.Forms.TextBox masterTextBox;
         private System.Windows.Forms.Button aboutButton;
+        private System.Windows.Forms.CheckBox specialCheck;
     }
 }
 
