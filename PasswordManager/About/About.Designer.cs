@@ -36,13 +36,16 @@ namespace PasswordManager.About
             this.youtubeButton = new System.Windows.Forms.Button();
             this.ngButton = new System.Windows.Forms.Button();
             this.twitterButton = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.infoLabel = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // aboutLabel
             // 
             this.aboutLabel.AutoSize = true;
             this.aboutLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(143)))), ((int)(((byte)(143)))));
-            this.aboutLabel.Location = new System.Drawing.Point(12, 9);
+            this.aboutLabel.Location = new System.Drawing.Point(12, 12);
             this.aboutLabel.Name = "aboutLabel";
             this.aboutLabel.Size = new System.Drawing.Size(79, 13);
             this.aboutLabel.TabIndex = 0;
@@ -53,7 +56,7 @@ namespace PasswordManager.About
             // 
             this.label1.AutoSize = true;
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(143)))), ((int)(((byte)(143)))));
-            this.label1.Location = new System.Drawing.Point(12, 35);
+            this.label1.Location = new System.Drawing.Point(9, 67);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(154, 13);
             this.label1.TabIndex = 1;
@@ -64,7 +67,7 @@ namespace PasswordManager.About
             this.githubButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(69)))), ((int)(((byte)(69)))));
             this.githubButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.githubButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(143)))), ((int)(((byte)(143)))));
-            this.githubButton.Location = new System.Drawing.Point(12, 60);
+            this.githubButton.Location = new System.Drawing.Point(12, 100);
             this.githubButton.Name = "githubButton";
             this.githubButton.Size = new System.Drawing.Size(75, 42);
             this.githubButton.TabIndex = 23;
@@ -77,7 +80,7 @@ namespace PasswordManager.About
             this.youtubeButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(69)))), ((int)(((byte)(69)))));
             this.youtubeButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.youtubeButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(143)))), ((int)(((byte)(143)))));
-            this.youtubeButton.Location = new System.Drawing.Point(93, 60);
+            this.youtubeButton.Location = new System.Drawing.Point(93, 100);
             this.youtubeButton.Name = "youtubeButton";
             this.youtubeButton.Size = new System.Drawing.Size(75, 42);
             this.youtubeButton.TabIndex = 24;
@@ -90,7 +93,7 @@ namespace PasswordManager.About
             this.ngButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(69)))), ((int)(((byte)(69)))));
             this.ngButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ngButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(143)))), ((int)(((byte)(143)))));
-            this.ngButton.Location = new System.Drawing.Point(174, 60);
+            this.ngButton.Location = new System.Drawing.Point(174, 100);
             this.ngButton.Name = "ngButton";
             this.ngButton.Size = new System.Drawing.Size(75, 42);
             this.ngButton.TabIndex = 25;
@@ -103,7 +106,7 @@ namespace PasswordManager.About
             this.twitterButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(69)))), ((int)(((byte)(69)))));
             this.twitterButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.twitterButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(143)))), ((int)(((byte)(143)))));
-            this.twitterButton.Location = new System.Drawing.Point(255, 60);
+            this.twitterButton.Location = new System.Drawing.Point(255, 100);
             this.twitterButton.Name = "twitterButton";
             this.twitterButton.Size = new System.Drawing.Size(75, 42);
             this.twitterButton.TabIndex = 26;
@@ -111,12 +114,34 @@ namespace PasswordManager.About
             this.twitterButton.UseVisualStyleBackColor = false;
             this.twitterButton.Click += new System.EventHandler(this.twitterButton_Click);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(255, 12);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(66, 68);
+            this.pictureBox1.TabIndex = 27;
+            this.pictureBox1.TabStop = false;
+            // 
+            // infoLabel
+            // 
+            this.infoLabel.AutoSize = true;
+            this.infoLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(143)))), ((int)(((byte)(143)))));
+            this.infoLabel.Location = new System.Drawing.Point(9, 38);
+            this.infoLabel.Name = "infoLabel";
+            this.infoLabel.Size = new System.Drawing.Size(211, 13);
+            this.infoLabel.TabIndex = 28;
+            this.infoLabel.Text = "Secure, Locally Saved, Password Manager";
+            // 
             // About
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(47)))), ((int)(((byte)(47)))));
-            this.ClientSize = new System.Drawing.Size(362, 112);
+            this.ClientSize = new System.Drawing.Size(333, 154);
+            this.Controls.Add(this.infoLabel);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.twitterButton);
             this.Controls.Add(this.ngButton);
             this.Controls.Add(this.youtubeButton);
@@ -131,6 +156,7 @@ namespace PasswordManager.About
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "About";
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -144,5 +170,7 @@ namespace PasswordManager.About
         private System.Windows.Forms.Button youtubeButton;
         private System.Windows.Forms.Button ngButton;
         private System.Windows.Forms.Button twitterButton;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label infoLabel;
     }
 }
