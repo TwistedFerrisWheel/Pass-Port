@@ -52,6 +52,7 @@ namespace PasswordManager
             this.masterPassLabel = new System.Windows.Forms.Label();
             this.aboutButton = new System.Windows.Forms.Button();
             this.specialCheck = new System.Windows.Forms.CheckBox();
+            this.copyButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.lengthBar)).BeginInit();
             this.accountsGroup.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -65,7 +66,7 @@ namespace PasswordManager
             this.textBox1.Location = new System.Drawing.Point(292, 86);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(236, 20);
-            this.textBox1.TabIndex = 1;
+            this.textBox1.TabIndex = 2;
             this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
@@ -100,7 +101,7 @@ namespace PasswordManager
             this.textBox2.Name = "textBox2";
             this.textBox2.PasswordChar = '•';
             this.textBox2.Size = new System.Drawing.Size(236, 20);
-            this.textBox2.TabIndex = 4;
+            this.textBox2.TabIndex = 3;
             this.textBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
@@ -138,7 +139,7 @@ namespace PasswordManager
             this.saveButton.Location = new System.Drawing.Point(12, 49);
             this.saveButton.Name = "saveButton";
             this.saveButton.Size = new System.Drawing.Size(139, 23);
-            this.saveButton.TabIndex = 10;
+            this.saveButton.TabIndex = 4;
             this.saveButton.Text = "Save Account";
             this.saveButton.UseVisualStyleBackColor = false;
             this.saveButton.Click += new System.EventHandler(this.saveButton_Click);
@@ -174,7 +175,7 @@ namespace PasswordManager
             this.accountBox.Location = new System.Drawing.Point(292, 29);
             this.accountBox.Name = "accountBox";
             this.accountBox.Size = new System.Drawing.Size(236, 20);
-            this.accountBox.TabIndex = 15;
+            this.accountBox.TabIndex = 1;
             this.accountBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.accountBox.TextChanged += new System.EventHandler(this.accountBox_TextChanged);
             // 
@@ -219,7 +220,7 @@ namespace PasswordManager
             this.deleteAccountButton.Location = new System.Drawing.Point(12, 78);
             this.deleteAccountButton.Name = "deleteAccountButton";
             this.deleteAccountButton.Size = new System.Drawing.Size(96, 23);
-            this.deleteAccountButton.TabIndex = 19;
+            this.deleteAccountButton.TabIndex = 5;
             this.deleteAccountButton.Text = "Delete";
             this.deleteAccountButton.UseVisualStyleBackColor = false;
             this.deleteAccountButton.Click += new System.EventHandler(this.deleteAccountButton_Click);
@@ -312,7 +313,7 @@ namespace PasswordManager
             this.aboutButton.Location = new System.Drawing.Point(0, 0);
             this.aboutButton.Name = "aboutButton";
             this.aboutButton.Size = new System.Drawing.Size(75, 42);
-            this.aboutButton.TabIndex = 22;
+            this.aboutButton.TabIndex = 6;
             this.aboutButton.Text = "About";
             this.aboutButton.UseVisualStyleBackColor = false;
             this.aboutButton.Click += new System.EventHandler(this.aboutButton_Click);
@@ -327,10 +328,23 @@ namespace PasswordManager
             this.specialCheck.Location = new System.Drawing.Point(357, 178);
             this.specialCheck.Name = "specialCheck";
             this.specialCheck.Size = new System.Drawing.Size(115, 17);
-            this.specialCheck.TabIndex = 2;
+            this.specialCheck.TabIndex = 12;
             this.specialCheck.Text = "Special Characters";
             this.specialCheck.UseVisualStyleBackColor = true;
             this.specialCheck.CheckedChanged += new System.EventHandler(this.specialCheck_CheckedChanged_1);
+            // 
+            // copyButton
+            // 
+            this.copyButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(69)))), ((int)(((byte)(69)))));
+            this.copyButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.copyButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(143)))), ((int)(((byte)(143)))));
+            this.copyButton.Location = new System.Drawing.Point(606, 135);
+            this.copyButton.Name = "copyButton";
+            this.copyButton.Size = new System.Drawing.Size(42, 33);
+            this.copyButton.TabIndex = 23;
+            this.copyButton.Text = "Copy";
+            this.copyButton.UseVisualStyleBackColor = false;
+            this.copyButton.Click += new System.EventHandler(this.copyButton_Click);
             // 
             // Form1
             // 
@@ -354,6 +368,7 @@ namespace PasswordManager
             this.Controls.Add(this.usernameLabel);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.aboutButton);
+            this.Controls.Add(this.copyButton);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
@@ -395,6 +410,7 @@ namespace PasswordManager
         private System.Windows.Forms.TextBox masterTextBox;
         private System.Windows.Forms.Button aboutButton;
         private System.Windows.Forms.CheckBox specialCheck;
+        private System.Windows.Forms.Button copyButton;
     }
 }
 

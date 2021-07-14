@@ -22,7 +22,7 @@ namespace PasswordManager
 
 
             if (!specialCheck) {
-                int numAllowable = 50;
+                int numAllowable = 48;
                 allowable = new char[numAllowable];
                 for (int chr = 0; chr < numAllowable; chr++)
                 {

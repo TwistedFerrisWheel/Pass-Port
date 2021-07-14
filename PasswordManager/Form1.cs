@@ -296,5 +296,17 @@ namespace PasswordManager
         {
 
         }
+
+        private void copyButton_Click(object sender, EventArgs e)
+        {
+            if (textBox2.Text != "")
+            {
+                Clipboard.SetText(textBox2.Text);
+                statusLabel.Text = "Copied to Clipboard";
+            } else
+            {
+                statusLabel.Text = "Failed to Copy!";
+            }
+        }
     }
 }
