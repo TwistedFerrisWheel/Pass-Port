@@ -1,5 +1,7 @@
 # Pass-Port
 
+#### Due to No Future Development Plans, This Repo is Archived
+
 
 A Portable, Light-Weight, and Secure Password Manager that saves locally to your device and encrpyts all data! That has a new logo as well!
 ![Pass-Port_Public](https://user-images.githubusercontent.com/48076080/125704525-bd9fab6f-1ef5-46c1-81de-e921a44cbba2.png)
